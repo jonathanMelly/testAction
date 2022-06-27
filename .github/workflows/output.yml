@@ -34,7 +34,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
     outputs:
-      data1: ${{ steps.bob.outputs.data }}
+      data1: 999
   
   deploy:
     runs-on: ubuntu-latest
