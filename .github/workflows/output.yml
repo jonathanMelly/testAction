@@ -29,10 +29,8 @@ jobs:
         run: echo "::set-output name=data::12345\n"
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: prev step
+        run: echo ${{ steps.bob.outputs.data }}
     outputs:
       data1: 999
   
@@ -41,5 +39,5 @@ jobs:
     needs: build
     steps:
       - name: titi
-        run: echo ${{ needs.build.data1 }}
+        run: echo ${{ needs.build.outputs.data1 }}
   
