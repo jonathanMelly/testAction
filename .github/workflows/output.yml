@@ -32,7 +32,7 @@ jobs:
       - name: prev step
         run: echo ${{ steps.bob.outputs.data }}
     outputs:
-      data1: 999
+      data1: ${{ steps.bob.outputs.data }}
   
   deploy:
     runs-on: ubuntu-latest
